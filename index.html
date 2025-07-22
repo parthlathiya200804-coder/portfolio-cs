@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parth Lathiya - The Creative Chronicle</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="masthead">
+        <div class="container">
+            <h1 class="newspaper-title">The Creative Chronicle</h1>
+            <p class="tagline">Your Daily Dose of Design & Development Insights</p>
+            <div class="masthead-info">
+                <span>VOL. I, NO. 1</span>
+                <span>Surat, India — July 21, 2025</span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#latest-works">Latest Works</a></li>
+                <li><a href="#about-me">About Me</a></li>
+                <li><a href="#skills">Skills & Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="print-button" target="_blank" rel="noopener noreferrer">Print CV</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container content-area">
+        <section class="main-column">
+            <h2 class="section-heading" id="latest-works">Breaking News: AI Breakthroughs & Interactive Systems</h2>
+
+            <article class="news-article">
+                <img src="Data\\Colorizer.jpg" alt="Colorizer Project Thumbnail" class="article-image">
+                <h2 class="article-headline">Revolutionizing Grayscale: Deep Learning Model Brings Old Photos to Life!</h2>
+                <p class="article-meta">By Parth Lathiya | AI/ML, Deep Learning | Mar 2025 - Apr 2025</p>
+                <p class="article-lead">SURAT – A cutting-edge, deep learning-based image colorization tool, leveraging U-Net architecture and the LAB color space, has been developed, capable of transforming grayscale inputs into realistic colorized outputs with high fidelity at $256\times256$ resolution.</p>
+                <div class="article-body article-body-truncated">
+                    <p>This individual project focused on creating a robust system for generating colorized images from grayscale inputs. It involved preprocessing extensive datasets, including splitting them into training, validation, and test sets to ensure comprehensive model training.</p>
+                    <p>The core of the solution lies in a U-Net architecture, which utilized the LAB color space to predict the 'ab' channels, subsequently combining them with the original 'L' channel for realistic outputs. The image colorization pipeline encompassed both training and inference workflows, supporting both single and batch image processing.</p>
+                </div>
+                <a href="#" class="read-more-toggle" data-target="colorizer">Read Full Story &raquo;</a>
+                <div class="full-story-content" id="full-story-colorizer">
+                    <p>Model training was designed and executed using PyTorch, with results displayed alongside original images for direct comparison and analysis. A significant achievement was the model's ability to generalize by processing approximately 118,000 diverse grayscale images, highlighting its potential for automatic image restoration and enhancement tasks.</p>
+                </div>
+            </article>
+
+            <article class="news-article">
+                <img src="Data\\Life in Space.jpg" alt="Life in Space Game Thumbnail" class="article-image">
+                <h2 class="article-headline">Astro-Survival Saga: New 2D Game Challenges Players to Endure the Cosmos!</h2>
+                <p class="article-meta">By Parth Lathiya (Team Member) | Game Development, Python | Oct 2024</p>
+                <p class="article-lead">SURAT – As a key team member in the NASA Space Apps Challenge 2024, a 2D survival game titled "Life in Space" was developed, tasking players with managing astronaut vital signs like oxygen, power, and health to ensure survival.</p>
+                <div class="article-body article-body-truncated">
+                    <p>This project utilized Python and Pygame to handle fundamental game mechanics, including character movement, item collection, and basic game logic like score tracking and game-over conditions.</p>
+                    <p>Additional features were integrated to enhance gameplay, such as increasing difficulty over time, simulating system failures, and implementing simple menus for instructions and scoring.</p>
+                </div>
+                <a href="#" class="read-more-toggle" data-target="lifeinspace">Read Full Story &raquo;</a>
+                <div class="full-story-content" id="full-story-lifeinspace">
+                    <p>The game was developed as part of the NASA Space Apps Challenge 2024 - Surat region, showcasing rapid prototyping and teamwork under challenge conditions. This project was a Regional Winner of NSAC2024.</p>
+                </div>
+            </article>
+
+            <article class="news-article">
+                <img src="Data\\air type.jpg" alt="Air Type Project Thumbnail" class="article-image">
+                <h2 class="article-headline">AirType Unleashed: Typing & Drawing, No Contact Required!</h2>
+                <p class="article-meta">By Parth Lathiya | Gesture Control, HCI | Aug 2024</p>
+                <p class="article-lead">A revolutionary gesture-controlled virtual keyboard and drawing interface, "AirType," has been built, enabling real-time text entry and freehand drawing solely through hand tracking, eliminating the need for physical input devices.</p>
+                <div class="article-body article-body-truncated">
+                    <p>This individual project enhanced earlier virtual keyboard and air canvas concepts by integrating support for special keys like ENTER, SPACE, and BACKSPACE, along with mode switching capabilities activated via an open palm gesture.</p>
+                </div>
+                <a href="#" class="read-more-toggle" data-target="airtype">Read Full Story &raquo;</a>
+                <div class="full-story-content" id="full-story-airtype">
+                    <p>The system provides an intuitive and contact-less interaction method, demonstrating advanced human-computer interaction principles using hand tracking technologies.</p>
+                </div>
+            </article>
+
+            <article class="news-article">
+                <img src="Data\\air canvas.jpg" alt="Air Canvas Project Thumbnail" class="article-image">
+                <h2 class="article-headline">Digital Artistry On Air: Webcam-Based Drawing App Launched!</h2>
+                <p class="article-meta">By Parth Lathiya | Gesture Control, Computer Vision | Jul 2024 - Aug 2024</p>
+                <p class="article-lead">A virtual drawing app where users draw using hand gestures detected via webcam has been created. It features real-time color switching, canvas clearing, and text recognition.</p>
+                <div class="article-body article-body-truncated">
+                    <p>This individual project seamlessly integrated finger-tracking with gesture-based controls using the MediaPipe library, providing a fluid and interactive drawing experience.</p>
+                    <p>Further enhancements included the implementation of Tesseract OCR for text recognition within the drawn canvas, expanding the application's utility.</p>
+                </div>
+                <a href="#" class="read-more-toggle" data-target="aircanvas">Read Full Story &raquo;</a>
+                <div class="full-story-content" id="full-story-aircanvas">
+                    <p>The project showcases real-time computer vision capabilities for creative and interactive applications.</p>
+                </div>
+            </article>
+
+            <article class="news-article">
+                <img src="Data\\virtual keyboard.jpg" alt="Virtual Keyboard Project Thumbnail" class="article-image">
+                <h2 class="article-headline">Hand-Controlled Typing: Innovative Virtual Keyboard Developed!</h2>
+                <p class="article-meta">By Parth Lathiya | Gesture Control, Computer Vision | Jun 2024 - Jul 2024</p>
+                <p class="article-lead">A virtual keyboard that uses hand gestures captured via webcam to simulate keypresses in real time has been developed, offering an intuitive alternative to physical keyboards.</p>
+                <div class="article-body article-body-truncated">
+                    <p>This individual project implemented precise hand and finger tracking utilizing MediaPipe and cvzone libraries to accurately detect pointing and pinching motions for key selection.</p>
+                    <p>An interactive on-screen keyboard was designed with clear hover and press feedback, including robust support for essential keys such as space, enter, and backspace. The pynput library was employed for triggering system key events, while OpenCV was used for rendering the visual interface.</p>
+                </div>
+                <a href="#" class="read-more-toggle" data-target="virtualkeyboard">Read Full Story &raquo;</a>
+                <div class="full-story-content" id="full-story-virtualkeyboard">
+                    <p>This project lays the groundwork for touch-less input systems, crucial for various applications from accessibility to virtual reality.</p>
+                </div>
+            </article>
+
+            <article class="news-article">
+                <img src="Data\\face antispoofing.jpg" alt="Face Anti-Spoofing Project Thumbnail" class="article-image">
+                <h2 class="article-headline">Secure Sight: YOLO-Based System Detects Fake Faces in Real-Time!</h2>
+                <p class="article-meta">By Parth Lathiya | AI/ML, Computer Vision, Security | Apr 2024 - May 2024</p>
+                <p class="article-lead">A robust face anti-spoofing system was built using a YOLO-based model to classify faces as real or fake in real-time via webcam, bolstering security measures for authentication.</p>
+                <div class="article-body article-body-truncated">
+                    <p>This individual project encompassed the full pipeline from data collection, automatic dataset splitting, and model training, including blur-based filtering to ensure high input quality.</p>
+                    <p>The YOLO model was trained on custom-labeled data and integrated for live inference, allowing for adjustable confidence and blur thresholds to fine-tune detection performance. The project was organized with modular scripts and a structured dataset folder system to facilitate easy experimentation and ensure reproducibility.</p>
+                </div>
+                <a href="#" class="read-more-toggle" data-target="facespoofing">Read Full Story &raquo;</a>
+                <div class="full-story-content" id="full-story-facespoofing">
+                    <p>This system has significant implications for enhancing the security of biometric verification systems against various spoofing attempts.</p>
+                </div>
+            </article>
+
+            <article class="news-article">
+                <img src="https://via.placeholder.com/600x400/D3D3D3/000000?text=Gesture+Volume+Control" alt="Gesture Volume Controller Thumbnail" class="article-image">
+                <h2 class="article-headline">Hand Signals for Sound: PC Volume Now Gesture-Controlled!</h2>
+                <p class="article-meta">By Parth Lathiya | HCI, Computer Vision | Dec 2023</p>
+                <p class="article-lead">A system was built to control PC volume using hand gestures by tracking the thumb-index finger distance, providing an intuitive and touch-less method of audio adjustment.</p>
+                <div class="article-body article-body-truncated">
+                    <p>This individual project leveraged MediaPipe for precise hand landmark detection and Pycaw to effectively interface with the system audio.</p>
+                    <p>Real-time visual feedback was incorporated, featuring a dynamic volume bar and gesture overlays, enhancing the user experience.</p>
+                </div>
+                <a href="#" class="read-more-toggle" data-target="volumecontrol">Read Full Story</a>
+                <div class="full-story-content" id="full-story-volumecontrol">
+                    <p>This project demonstrates practical applications of computer vision for everyday human-computer interaction, offering an accessible control mechanism.</p>
+                </div>
+            </article>
+
+            <section class="section-divider" id="skills">
+                <h3>Technical Proficiencies & Achievements</h3>
+            </section>
+            <article class="news-article client-testimonial">
+                <h2 class="article-headline">The Editor's Toolkit: Core Competencies for Innovation</h2>
+                <p class="article-meta">Skills Overview | July 21, 2025</p>
+                <div class="article-body">
+                    <p>My technical arsenal is built for versatility and problem-solving, with a strong foundation in modern development and machine learning paradigms. Key skills include:</p>
+                    <ul>
+                        <li><b>Languages:</b> Python, SQL, HTML, CSS</li>
+                        <li><b>Libraries/Frameworks:</b> NumPy, Pandas, Pygame, MediaPipe, cvzone, pynput, OpenCV, PyTorch, YOLO</li>
+                        <li><b>Methodologies:</b> Project Management</li>
+                    </ul>
+                    <p>I am fluent in English, Hindi, and Gujarati.</p>
+                    <p>My dedication to learning is underscored by certifications in <b>Python for Beginners</b>, <b>Machine Learning with Python</b> and  <b>Complete MLOPs Bootcamp by Krish Naik</b>.</p>
+                    <p>Beyond technical pursuits, I am recognized as a <b>Regional Winner NSAC2024</b>, served as <b>Treasurer for the IEEE SPS Student Branch</b>, and the <b>Lead in the Coding Club</b>.</p>
+                </div>
+            </article>
+
+        </section>
+
+        <aside class="sidebar-column">
+            <section class="about-me-box" id="about-me">
+                <h3>About the Editor:<br> Parth N. Lathiya</h3>
+                <img src="Data\\Parth_Lathiya.png" alt="Parth Lathiya" class="profile-photo">
+                <p>Hello! I'm <b>Parth Naresh Lathiya</b>, a final-year Bachelor of Technology student in Computer Engineering at Sarvajanik College of Engineering and Technology, Sarvajanik University, Surat, Gujarat, India. I'm pursuing Honors in Artificial Intelligence and Machine Learning, with a CGPA of <b>7.84/10.00</b>. My passion lies in transforming complex ideas into intuitive and impactful digital solutions, particularly in the fields of AI, machine learning, and interactive systems. This chronicle showcases my journey and recent expeditions in the world of design and technology, as I prepare for graduation.</p>
+            </section>
+
+            <section class="contact-box" id="contact">
+                <h3>Contact Desk</h3>
+                <p>Have a project in mind or just want to say hello?</p>
+                <ul>
+                    <li>Email: <a href="mailto:parthnlathiya@gmail.com">parthnlathiya@gmail.com</a></li>
+                    <li>Phone: +91 9537150942</li>
+                    <li>GitHub: <a href="https://github.com/ParthLathiya" target="_blank">Parth's GitHub</a></li>
+                    <li>LinkedIn: <a href="https://www.linkedin.com/in/parth-lathiya-802541253/" target="_blank">Parth's LinkedIn</a></li>
+                    <li>Address: Surat, Gujarat, India.395004</li>
+                </ul>
+            </section>
+        </aside>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 The Creative Chronicle - Parth Lathiya. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

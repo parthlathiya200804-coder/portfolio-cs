@@ -1,0 +1,404 @@
+/* General Body and Reset */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Light cream/off-white for paper feel */
+    color: #333;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased; /* Better font rendering for webkit browsers */
+    -moz-osx-font-smoothing: grayscale; /* Better font rendering for firefox */
+}
+
+/* Global Box Sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Masthead (Newspaper Title) */
+.masthead {
+    background-color: #1a1a1a; /* Dark background for masthead */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 5px solid #000;
+}
+
+.newspaper-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5em; /* Large, bold title */
+    margin: 0;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Subtle text shadow */
+}
+
+.tagline {
+    font-family: 'Merriweather', serif;
+    font-size: 1.1em;
+    font-style: italic;
+    margin-top: 5px;
+    color: #ccc;
+}
+
+.masthead-info {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.85em;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    color: #bbb;
+}
+
+/* Main Navigation */
+.main-nav {
+    background-color: #fff;
+    border-bottom: 2px solid #ddd;
+    padding: 10px 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow for depth */
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* For responsiveness */
+}
+
+.main-nav ul li {
+    margin: 0 15px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #555;
+    padding: 5px 0;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    display: block; /* Make the whole padding area clickable */
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    color: #000;
+    border-bottom: 2px solid #000;
+}
+
+.print-button {
+    background-color: #cc0000; /* Red for emphasis */
+    color: white !important;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+    border: none; /* Remove default button border */
+}
+
+.print-button:hover {
+    background-color: #990000;
+    border-bottom: none !important; /* Override hover border from general nav link */
+}
+
+/* Content Area - Column Layout */
+.content-area {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr; /* Main column (wider) and sidebar */
+    gap: 30px;
+    padding: 30px 20px;
+    background-color: #fff; /* White background for the "paper" content */
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05); /* Subtle shadow for depth */
+}
+
+/* Main Column Articles */
+.news-article {
+    border-bottom: 1px dashed #ccc; /* Dotted line separator */
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+}
+
+.news-article:last-of-type {
+    border-bottom: none; /* No border for the last article */
+}
+
+.article-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    display: block; /* Remove extra space below image */
+    border: 1px solid #ddd; /* Light border around images */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow for images */
+}
+
+.article-headline {
+    font-family: 'Merriweather', serif;
+    font-size: 2em;
+    color: #000;
+    margin-top: 0;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.article-meta {
+    font-size: 0.85em;
+    color: #777;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.article-lead {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15em;
+    font-weight: 400; /* Italic for lead paragraph */
+    font-style: italic;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.article-body {
+    margin-bottom: 15px;
+}
+
+.read-more, .read-more-toggle {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    margin-top: 5px; /* Space between body and link */
+}
+
+.read-more:hover, .read-more-toggle:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Read More Toggle Specific Styling */
+.full-story-content {
+    display: none; /* Hidden by default via JS */
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #ccc; /* Subtle separator */
+}
+
+.full-story-content p {
+    margin-bottom: 10px;
+}
+
+
+/* Section Divider (e.g., Client Spotlight) */
+.section-divider {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 10px 0;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.section-divider h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    margin: 0;
+    text-transform: uppercase;
+    color: #000;
+    position: relative;
+    display: inline-block;
+    padding: 0 15px;
+    background-color: #fff; /* Match content background */
+    z-index: 1; /* Ensure text is above border */
+}
+
+/* Client Testimonial (Quote Style) */
+.client-testimonial .quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3em;
+    font-style: italic;
+    color: #222;
+    border-left: 5px solid #ccc;
+    padding-left: 15px;
+    margin: 20px 0;
+}
+
+.client-testimonial cite {
+    display: block;
+    text-align: right;
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Sidebar Column */
+.sidebar-column {
+    padding-top: 0; /* Align with main column content */
+}
+
+.sidebar-column section {
+    background-color: #f9f9f9; /* Slightly different background for sidebar sections */
+    border: 1px solid #eee;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.sidebar-column h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.5em;
+    color: #000;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.profile-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 15px auto;
+    object-fit: cover;
+    border: 3px solid #ccc;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+/* Ad Box styling */
+.ad-box {
+    text-align: center;
+    background-color: #fff8e1 !important; /* Lighter yellow for ad */
+    border: 1px dashed #d4c08e !important;
+}
+
+.ad-box img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.ad-box p {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.ad-cta {
+    display: inline-block;
+    background-color: #4CAF50; /* Green button for CTA */
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.ad-cta:hover {
+    background-color: #45a049;
+}
+
+
+.contact-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-box ul li {
+    margin-bottom: 8px;
+}
+
+.contact-box ul li a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-box ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+    background-color: #1a1a1a;
+    color: #ccc;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.85em;
+    margin-top: 30px;
+    border-top: 5px solid #000; /* Mirror masthead border */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-area {
+        grid-template-columns: 1fr; /* Single column layout on smaller screens */
+        gap: 20px;
+        padding: 20px 15px;
+    }
+
+    .masthead {
+        padding: 15px 0;
+    }
+
+    .newspaper-title {
+        font-size: 2.5em;
+    }
+
+    .tagline {
+        font-size: 1em;
+    }
+
+    .masthead-info {
+        flex-direction: column;
+        gap: 5px;
+        font-size: 0.8em;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-nav ul li {
+        margin: 5px 0;
+    }
+
+    .article-headline {
+        font-size: 1.5em;
+    }
+
+    .article-lead {
+        font-size: 1em;
+    }
+
+    .sidebar-column section {
+        padding: 15px;
+    }
+
+    .section-divider h3 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .newspaper-title {
+        font-size: 2em;
+    }
+    .masthead-info {
+        font-size: 0.75em;
+    }
+    .main-nav ul li a {
+        padding: 3px 0;
+    }
+    .print-button {
+        padding: 4px 8px;
+    }
+}
