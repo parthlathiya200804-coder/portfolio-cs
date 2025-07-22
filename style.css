@@ -18,7 +18,7 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 20px; /* Base padding for all screen sizes */
 }
 
 /* Masthead (Newspaper Title) */
@@ -32,7 +32,7 @@ body {
 
 .newspaper-title {
     font-family: 'Playfair Display', serif;
-    font-size: 3.5em; /* Large, bold title */
+    font-size: 3.5em; /* Large, bold title - default for larger screens */
     margin: 0;
     line-height: 1;
     text-transform: uppercase;
@@ -42,7 +42,7 @@ body {
 
 .tagline {
     font-family: 'Merriweather', serif;
-    font-size: 1.1em;
+    font-size: 1.1em; /* Default for larger screens */
     font-style: italic;
     margin-top: 5px;
     color: #ccc;
@@ -50,11 +50,11 @@ body {
 
 .masthead-info {
     font-family: 'Open Sans', sans-serif;
-    font-size: 0.85em;
+    font-size: 0.85em; /* Default for larger screens */
     margin-top: 15px;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 20px; /* Default gap for horizontal display */
     color: #bbb;
 }
 
@@ -74,11 +74,12 @@ body {
     margin: 0;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* For responsiveness */
+    flex-wrap: wrap; /* Allows items to wrap onto the next line if space runs out */
+    /* Default flex-direction is row, which is good for wider screens */
 }
 
 .main-nav ul li {
-    margin: 0 15px;
+    margin: 0 15px; /* Horizontal spacing for wider screens */
 }
 
 .main-nav ul li a {
@@ -98,8 +99,11 @@ body {
 .print-button {
     background-color: #cc0000; /* Red for emphasis */
     color: white !important;
-    padding: 5px 10px;
-    border-radius: 3px;
+    padding: 10px 20px;
+    width: 60px;
+    height: 35px;
+    text-align: center;
+    border-radius: 7px;
     transition: background-color 0.3s ease;
     border: none; /* Remove default button border */
 }
@@ -112,13 +116,21 @@ body {
 /* Content Area - Column Layout */
 .content-area {
     display: grid;
-    grid-template-columns: 2.5fr 1fr; /* Main column (wider) and sidebar */
+    grid-template-columns: 2.5fr 1fr; /* Main column (wider) and sidebar - default for larger screens */
     gap: 30px;
-    padding: 30px 20px;
+    padding: 30px 20px; /* Default padding for larger screens */
     background-color: #fff; /* White background for the "paper" content */
     border-left: 1px solid #eee;
     border-right: 1px solid #eee;
     box-shadow: 0 0 10px rgba(0,0,0,0.05); /* Subtle shadow for depth */
+}
+
+/* Special rule for about.html to keep it single column on wider screens */
+.content-area.single-column {
+    grid-template-columns: 1fr; /* Always single column for about page */
+    max-width: 900px; /* Constrain width for better readability on single column */
+    margin-left: auto; /* Center the single column */
+    margin-right: auto; /* Center the single column */
 }
 
 /* Main Column Articles */
@@ -143,7 +155,7 @@ body {
 
 .article-headline {
     font-family: 'Merriweather', serif;
-    font-size: 2em;
+    font-size: 2em; /* Default for larger screens */
     color: #000;
     margin-top: 0;
     margin-bottom: 10px;
@@ -159,7 +171,7 @@ body {
 
 .article-lead {
     font-family: 'Playfair Display', serif;
-    font-size: 1.15em;
+    font-size: 1.15em; /* Default for larger screens */
     font-weight: 400; /* Italic for lead paragraph */
     font-style: italic;
     color: #444;
@@ -196,7 +208,6 @@ body {
     margin-bottom: 10px;
 }
 
-
 /* Section Divider (e.g., Client Spotlight) */
 .section-divider {
     border-top: 1px solid #000;
@@ -208,7 +219,7 @@ body {
 
 .section-divider h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 1.8em;
+    font-size: 1.8em; /* Default for larger screens */
     margin: 0;
     text-transform: uppercase;
     color: #000;
@@ -219,24 +230,6 @@ body {
     z-index: 1; /* Ensure text is above border */
 }
 
-/* Client Testimonial (Quote Style) */
-.client-testimonial .quote {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3em;
-    font-style: italic;
-    color: #222;
-    border-left: 5px solid #ccc;
-    padding-left: 15px;
-    margin: 20px 0;
-}
-
-.client-testimonial cite {
-    display: block;
-    text-align: right;
-    font-size: 0.9em;
-    color: #666;
-    margin-top: 10px;
-}
 
 /* Sidebar Column */
 .sidebar-column {
@@ -253,7 +246,7 @@ body {
 
 .sidebar-column h3 {
     font-family: 'Merriweather', serif;
-    font-size: 1.5em;
+    font-size: 1.5em; /* Default for larger screens */
     color: #000;
     margin-top: 0;
     margin-bottom: 15px;
@@ -262,7 +255,7 @@ body {
 }
 
 .profile-photo {
-    width: 100px;
+    width: 100px; /* Default for larger screens */
     height: 100px;
     border-radius: 50%;
     display: block;
@@ -270,40 +263,6 @@ body {
     object-fit: cover;
     border: 3px solid #ccc;
     box-shadow: 0 0 8px rgba(0,0,0,0.1);
-}
-
-/* Ad Box styling */
-.ad-box {
-    text-align: center;
-    background-color: #fff8e1 !important; /* Lighter yellow for ad */
-    border: 1px dashed #d4c08e !important;
-}
-
-.ad-box img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-.ad-box p {
-    font-size: 0.95em;
-    color: #555;
-    margin-bottom: 15px;
-}
-
-.ad-cta {
-    display: inline-block;
-    background-color: #4CAF50; /* Green button for CTA */
-    color: white;
-    padding: 8px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.ad-cta:hover {
-    background-color: #45a049;
 }
 
 
@@ -336,12 +295,24 @@ body {
     border-top: 5px solid #000; /* Mirror masthead border */
 }
 
-/* Responsive Design */
+/* --- Responsive Design (Enhanced) --- */
+
+/* For screens up to 768px wide (e.g., typical tablets in portrait, and phones) */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 15px; /* Slightly less padding on smaller screens */
+    }
+
     .content-area {
-        grid-template-columns: 1fr; /* Single column layout on smaller screens */
+        grid-template-columns: 1fr; /* Single column layout for main content and sidebar */
         gap: 20px;
-        padding: 20px 15px;
+        padding: 20px 15px; /* Adjust padding for mobile */
+    }
+
+    /* Ensure about page maintains single column on small screens */
+    .content-area.single-column {
+        grid-template-columns: 1fr;
+        max-width: 100%; /* Allow it to fill container on small screens */
     }
 
     .masthead {
@@ -349,56 +320,72 @@ body {
     }
 
     .newspaper-title {
-        font-size: 2.5em;
+        font-size: 2.5em; /* Smaller title for mobile */
     }
 
     .tagline {
-        font-size: 1em;
+        font-size: 1em; /* Smaller tagline for mobile */
     }
 
     .masthead-info {
-        flex-direction: column;
+        flex-direction: column; /* Stack info vertically */
         gap: 5px;
         font-size: 0.8em;
     }
 
     .main-nav ul {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Stack navigation items vertically */
+        align-items: center; /* Center them */
     }
 
     .main-nav ul li {
-        margin: 5px 0;
+        margin: 5px 0; /* Vertical margin for stacked nav items */
     }
 
     .article-headline {
-        font-size: 1.5em;
+        font-size: 1.5em; /* Smaller article headlines */
     }
 
     .article-lead {
-        font-size: 1em;
+        font-size: 1em; /* Smaller article lead text */
     }
 
     .sidebar-column section {
-        padding: 15px;
+        padding: 15px; /* Adjust sidebar section padding */
     }
 
     .section-divider h3 {
-        font-size: 1.5em;
+        font-size: 1.5em; /* Smaller section divider heading */
+    }
+
+    .profile-photo {
+        width: 80px; /* Smaller profile photo on mobile */
+        height: 80px;
+    }
+
+    .sidebar-column h3 {
+        font-size: 1.3em; /* Smaller sidebar headings on mobile */
     }
 }
 
+/* For very small screens (e.g., older phones or narrow viewports) */
 @media (max-width: 480px) {
     .newspaper-title {
-        font-size: 2em;
+        font-size: 2em; /* Even smaller title */
     }
     .masthead-info {
         font-size: 0.75em;
     }
     .main-nav ul li a {
-        padding: 3px 0;
+        padding: 3px 0; /* Adjust nav item padding */
     }
     .print-button {
-        padding: 4px 8px;
+        padding: 4px 8px; /* Adjust print button padding */
+    }
+    .article-headline {
+        font-size: 1.3em; /* Even smaller article headlines */
+    }
+    .section-divider h3 {
+        font-size: 1.3em; /* Even smaller section divider heading */
     }
 }
