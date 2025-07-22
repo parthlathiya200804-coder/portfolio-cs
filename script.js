@@ -12,6 +12,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 targetElement.scrollIntoView({
                     behavior: 'smooth'
                 });
+
+                // Close the hamburger menu after a link is clicked 
+                const navList = document.querySelector('.main-nav .nav-list');
+                const hamburger = document.querySelector('.hamburger-menu');
+                if (navList && hamburger) {
+                    navList.classList.remove('active');
+                    hamburger.classList.remove('open');
+                }
             }
         });
     });
@@ -37,6 +45,14 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
+
+            // Close the hamburger menu if Print CV is clicked while open 
+            const navList = document.querySelector('.main-nav .nav-list');
+            const hamburger = document.querySelector('.hamburger-menu');
+            if (navList && hamburger) {
+                navList.classList.remove('active');
+                hamburger.classList.remove('open');
+            }
         });
     }
 
