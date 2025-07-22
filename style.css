@@ -66,34 +66,78 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow for depth */
+    position: relative
 }
 
-.main-nav ul {
+/* Hamburger Icon Styles */
+.hamburger-menu {
+    width: 30px;
+    height: 25px;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: none; /* Hidden by default on larger screens */
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's above other content */
+}
+
+.hamburger-menu .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #503434; /* Color of the bars */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Navigation List Styles (Initial State for Mobile) */
+.main-nav .nav-list { /* Use .nav-list here */
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Allows items to wrap onto the next line if space runs out */
-    /* Default flex-direction is row, which is good for wider screens */
+    display: flex; /* Flexbox for navigation items */
+    flex-direction: column; /* Stack vertically for mobile initially */
+    align-items: center; /* Center items when stacked */
+    
+    /* Initially hide the menu off-screen for mobile */
+    position: absolute;
+    top: 100%; /* Position below the nav bar */
+    left: 0;
+    width: 100%;
+    background-color: #fff; /* Menu background */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transform: translateY(-100%); /* Start hidden above the viewport */
+    opacity: 0;
+    pointer-events: none; /* Disable interaction when hidden */
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+    z-index: 1000;
 }
 
-.main-nav ul li {
-    margin: 0 15px; /* Horizontal spacing for wider screens */
+.main-nav .nav-list.active {
+    transform: translateY(0); /* Slide down to visible position */
+    opacity: 1;
+    pointer-events: auto; /* Enable interaction when active */
 }
 
-.main-nav ul li a {
-    text-decoration: none;
+.main-nav .nav-list li {
+    margin: 10px 0; /* Vertical spacing for menu items */
+    width: 100%; /* Make list items full width */
+    text-align: center;
+}
+
+.main-nav .nav-list li a {
     color: #555;
-    padding: 5px 0;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
-    display: block; /* Make the whole padding area clickable */
+    padding: 10px 20px; /* Larger tap area */
+    width: 100%;
+    box-sizing: border-box; /* Include padding in width */
 }
 
-.main-nav ul li a:hover,
-.main-nav ul li a.active {
+.main-nav .nav-list li a:hover,
+.main-nav .nav-list li a.active {
+    background-color: #f0f0f0; /* Light background on hover */
     color: #000;
-    border-bottom: 2px solid #000;
+    border-bottom: none; /* Remove bottom border for menu items */
 }
 
 .print-button {
@@ -123,14 +167,6 @@ body {
     border-left: 1px solid #eee;
     border-right: 1px solid #eee;
     box-shadow: 0 0 10px rgba(0,0,0,0.05); /* Subtle shadow for depth */
-}
-
-/* Special rule for about.html to keep it single column on wider screens */
-.content-area.single-column {
-    grid-template-columns: 1fr; /* Always single column for about page */
-    max-width: 900px; /* Constrain width for better readability on single column */
-    margin-left: auto; /* Center the single column */
-    margin-right: auto; /* Center the single column */
 }
 
 /* Main Column Articles */
@@ -333,6 +369,10 @@ body {
         font-size: 0.8em;
     }
 
+    .hamburger-menu {
+        display: flex; /* Makes the hamburger menu visible and uses flexbox for its bars */
+    }
+
     .main-nav ul {
         flex-direction: column; /* Stack navigation items vertically */
         align-items: center; /* Center them */
@@ -387,5 +427,52 @@ body {
     }
     .section-divider h3 {
         font-size: 1.3em; /* Even smaller section divider heading */
+    }
+}
+
+/* For screens LARGER than 768px (Desktop/Tablet Landscape) */
+@media (min-width: 769px) {
+    /* Hide the hamburger menu on larger screens */
+    .hamburger-menu {
+        display: none;
+    }
+
+    /* Make the navigation list always visible and horizontal */
+    .main-nav .nav-list {
+        position: static; /* Remove absolute positioning */
+        transform: translateY(0); /* Ensure no vertical offset */
+        opacity: 1; /* Ensure it's fully visible */
+        pointer-events: auto; /* Enable interaction */
+        flex-direction: row; /* Arrange items horizontally */
+        justify-content: center; /* Center the navigation items */
+        box-shadow: none; /* Remove dropdown shadow */
+        width: auto; /* Allow content to dictate width */
+        background-color: transparent; /* Remove dropdown background */
+        margin-top: 0;
+    }
+
+    .main-nav .nav-list li {
+        margin: 0 20px; /* Adjust horizontal spacing between nav items */
+    }
+
+    .main-nav .nav-list li a {
+        color: #555; /* Re-apply default link color */
+        padding: 10px 0; /* Adjust padding for desktop links */
+        border-bottom: 2px solid transparent; /* Prepare for hover underline effect */
+    }
+
+    .main-nav .nav-list li a:hover,
+    .main-nav .nav-list li a.active {
+        background-color: transparent; /* No background on hover for desktop */
+        color: #007bff; /* Change color on hover */
+        border-bottom-color: #007bff; /* Show a blue underline on hover */
+    }
+
+    /* Adjust print button for desktop view if necessary */
+    .print-button {
+        padding: 8px 15px; /* Example adjustment */
+        width: auto;
+        height: auto;
+        display: inline-block; /* Ensure it behaves like a normal inline-block element */
     }
 }
