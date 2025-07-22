@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Option 2: Simulate PDF download (replace with your actual CV PDF path)
             // For this to work, you need to have a file named 'your-cv.pdf' in your root directory
-            const cvPath = 'Parth Lathiya_CV.pdf'; // Make sure you have this file!
+            const cvPath = 'Data\\Parth Lathiya_CV.pdf'; // Make sure you have this file!
             const link = document.createElement('a');
             link.href = cvPath;
             link.download = 'Parth_Lathiya_CV.pdf'; // Name for the downloaded file
@@ -37,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-            alert('Your CV is being downloaded!');
         });
     }
 
@@ -67,4 +66,15 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // 4. Hamburger Menu Toggle Functionality (NEW!)
+    const hamburger = document.querySelector('.hamburger-menu');
+    const navList = document.querySelector('.main-nav .nav-list');
+
+    if (hamburger && navList) {
+        hamburger.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            hamburger.classList.toggle('open'); // Add/remove 'open' class for animation
+        });
+    }
 });
