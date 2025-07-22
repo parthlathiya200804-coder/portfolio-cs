@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Option 2: Simulate PDF download (replace with your actual CV PDF path)
             // For this to work, you need to have a file named 'your-cv.pdf' in your root directory
-            const cvPath = 'Data\\Parth Lathiya_CV.pdf'; // Make sure you have this file!
+            const cvPath = 'Parth Lathiya_CV.pdf'; // Make sure you have this file!
             const link = document.createElement('a');
             link.href = cvPath;
             link.download = 'Parth_Lathiya_CV.pdf'; // Name for the downloaded file
