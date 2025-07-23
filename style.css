@@ -463,7 +463,7 @@ body {
 
     .main-nav .nav-list li a:hover,
     .main-nav .nav-list li a.active {
-        background-color: transparent; /* No background on hover for desktop */
+        background-color: #990000; /* No background on hover for desktop */
         color: #007bff; /* Change color on hover */
         border-bottom-color: #007bff; /* Show a blue underline on hover */
     }
